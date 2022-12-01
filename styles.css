@@ -64,6 +64,9 @@ button p {
 }
 
 @media(max-width: 999px) {
+    body {
+        width: 100%;
+    }
     main > img {
         width: 87.24px;
         height: 62.93px;
