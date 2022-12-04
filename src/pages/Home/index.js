@@ -1,10 +1,19 @@
-import {API_KEY, BASE_URL, IMG_URL, language,} from '../api.js'
+import {APIKey, BASE_URL, IMG_URL, language,} from '../../config/api'
 
-import{ useState } from 'react'
+import{ useState, useEffect } from 'react'
+//import { response } from 'express'
 
 function Home() {
 
    const [movie, setMovies] = useState([])
+
+   useEffect(() => {
+    //consumir a api
+
+    fetch(`https://api.themoviedb.org/3/movie/550?api_key=${APIKey}`)
+        .then(response => response .json())
+        .then(data => {setMovies(data.results)})
+   }, [])
 
     return (
         <div>
